@@ -117,7 +117,7 @@ var details = function (options, parent, done) {
                     var domain = $(this).data('domain');
                     var server = $('.servers', el).val();
                     console.log('emitting event : ' + server + ' ' + domain);
-                    serand.emit('hub', 'drones start', {
+                    serand.emit('hub', 'drone start', {
                         server: server,
                         domain: domain
                     });
