@@ -1,0 +1,12 @@
+{
+    "name": "hub-domains",
+    "description": "hub-domains component",
+    "scripts": ["index.js"],
+    "styles": ["styles.css"],
+    "main": "index.js",
+    "templates": ["template.html", "list.html", "add.html", "details.html"],
+    "dependencies": {
+        "serandomps/dust": "master",
+        "serandomps/serand": "master"
+    }
+}

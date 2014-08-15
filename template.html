@@ -1,0 +1,48 @@
+<!--<div class="hub-domains">
+    <div class="row toolbar">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary add">Add</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped">
+                <colgroup>
+                    <col class="col-xs-1">
+                    <col class="col-xs-7">
+                </colgroup>
+                <tbody>
+                &lt;!&ndash;<tr><td colspan="2"><button type="button" class="btn btn-info add">Add</button></td></tr>&ndash;&gt;
+                {#.}
+                <tr>
+                    <td>
+                        <h5 class="cname">{cname}</h5>
+                    </td>
+                    <td>
+                        <div>
+                            <button type="button" class="btn btn-danger edit">Edit</button>
+                            <button type="button" class="btn btn-info drones">Drones</button>
+                        </div>
+                    </td>
+                </tr>
+                {/.}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>-->
+
+<div class="hub-domains">
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="nav nav-pills nav-stacked">
+                {#menu}
+                <li class="{action}"><a href="{url}">{title}</a></li>
+                {/menu}
+            </ul>
+        </div>
+        <div class="col-md-9 content">
+            {content|s}
+        </div>
+    </div>
+</div>
