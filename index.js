@@ -195,10 +195,10 @@ var domain = function (id) {
 };
 
 serand.on('hub', 'domains list', function (id) {
-    if (domains) {
-        serand.emit('hub', 'domains listed', (id ? domain(id) : domains));
-        return;
-    }
+    /*if (domains) {
+     serand.emit('hub', 'domains listed', (id ? domain(id) : domains));
+     return;
+     }*/
     $.ajax({
         url: '/apis/v/domains',
         headers: {
@@ -207,7 +207,7 @@ serand.on('hub', 'domains list', function (id) {
         dataType: 'json',
         success: function (data) {
             domains = data;
-            serand.emit('hub', 'domains listed', data);
+            serand.emit('hub', 'domains listed', id ? domain(id) : domains);
         },
         error: function () {
             domains = [];
