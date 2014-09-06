@@ -25,6 +25,11 @@ var list = function (options, parent, done) {
             $('.details', el).on('click', function () {
                 redirect('/domains/' + $(this).parent().data('id'));
             });
+            $('.restart', el).on('click', function () {
+                serand.emit('hub', 'domain restart', {
+                    id: $(this).parent().data('id')
+                });
+            });
             $('.delete', el).on('click', function () {
                 $.ajax({
                     method: 'DELETE',
