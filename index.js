@@ -19,6 +19,27 @@ var list = function (options, parent, done) {
                 return;
             }
             var el = $(out);
+            $('.plan .save', el).on('click', function () {
+                $.post('/apis/v/hub/plan', function (data) {
+                    console.log(data);
+                });
+            });
+            $('.plan .delete', el).on('click', function () {
+                $.ajax({
+                    method: 'DELETE',
+                    url: '/apis/v/hub/plan',
+                    headers: {
+                        'x-host': 'hub.serandives.com:4000'
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data);
+                    },
+                    error: function () {
+
+                    }
+                });
+            });
             $('.drones', el).on('click', function () {
                 redirect('/domains/' + $(this).parent().data('id') + '/drones');
             });
@@ -180,7 +201,7 @@ module.exports = function (sandbox, fn, options) {
             return;
         case 'details':
             options.menu = [
-                { title: 'Drones', url: '/domains/' + options.id + '/drones', action: 'drones'}
+                {title: 'Drones', url: '/domains/' + options.id + '/drones', action: 'drones'}
             ];
             render('details', sandbox, fn, options, details);
             return;
