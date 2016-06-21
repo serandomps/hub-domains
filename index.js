@@ -51,6 +51,11 @@ var list = function (options, parent, done) {
                     id: $(this).parent().data('id')
                 });
             });
+            $('.deploy', el).on('click', function () {
+                serand.emit('hub', 'domain deploy', {
+                    id: $(this).parent().data('id')
+                });
+            });
             $('.delete', el).on('click', function () {
                 $.ajax({
                     method: 'DELETE',
